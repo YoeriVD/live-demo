@@ -1,0 +1,64 @@
+﻿@model WebApplication.Models.QuestionViewModel
+
+@if (Model.IsAnswered)
+{
+    <section class="question">
+        <h1>
+            @Model.Question
+        </h1>
+    </section>
+    <section class="voting-buttons d-flex align-items-center justify-content-center flex-column">
+        <h1>@Model.Answer</h1>
+        <h2>
+            <a asp-action="Vote" asp-route-id="@(Model.QuestionId + 1)">
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </h2>
+    </section>
+}
+else
+{
+    @Html.EditorForModel()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@if (Model.IsAnswered)
+    {
+        @Html.DisplayForModel()
+    }
+    else
+    {
+        @Html.EditorForModel()
+    }*@
